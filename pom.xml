@@ -1,0 +1,238 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+  ~ Copyright 2023 Commonwealth Scientific and Industrial Research
+  ~ Organisation (CSIRO) ABN 41 687 119 230.
+  ~
+  ~ Licensed under the Apache License, Version 2.0 (the "License");
+  ~ you may not use this file except in compliance with the License.
+  ~ You may obtain a copy of the License at
+  ~
+  ~     http://www.apache.org/licenses/LICENSE-2.0
+  ~
+  ~ Unless required by applicable law or agreed to in writing, software
+  ~ distributed under the License is distributed on an "AS IS" BASIS,
+  ~ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  ~ See the License for the specific language governing permissions and
+  ~ limitations under the License.
+  -->
+
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>au.csiro.fhir</groupId>
+  <version>1.0.0-SNAPSHOT</version>
+  <artifactId>fhir-auth</artifactId>
+  <packaging>jar</packaging>
+
+  <name>FHIR Authentication Library</name>
+  <description>Java library for FHIR SMART Backend Services authentication.</description>
+  <url>https://github.com/aehrc/fhir-auth-java</url>
+
+  <developers>
+    <developer>
+      <name>John Grimes</name>
+      <email>John.Grimes@csiro.au</email>
+      <url>https://github.com/johngrimes</url>
+    </developer>
+    <developer>
+      <name>Piotr Szul</name>
+      <email>Piotr.Szul@csiro.au</email>
+      <url>https://github.com/piotrszul</url>
+    </developer>
+  </developers>
+
+  <organization>
+    <name>Australian e-Health Research Centre, CSIRO</name>
+    <url>https://aehrc.csiro.au</url>
+  </organization>
+  <licenses>
+    <license>
+      <name>Apache License, Version 2.0</name>
+      <url>https://www.apache.org/licenses/LICENSE-2.0</url>
+    </license>
+  </licenses>
+
+  <scm>
+    <url>https://github.com/aehrc/fhir-auth-java</url>
+    <developerConnection>scm:git:https://github.com/aehrc/fhir-auth-java.git</developerConnection>
+  </scm>
+  <issueManagement>
+    <system>GitHub Issues</system>
+    <url>https://github.com/aehrc/fhir-auth-java/issues</url>
+  </issueManagement>
+  <ciManagement>
+    <system>GitHub Actions</system>
+    <url>https://github.com/aehrc/fhir-auth-java/actions</url>
+  </ciManagement>
+
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+
+    <fhirAuth.lombokVersion>1.18.32</fhirAuth.lombokVersion>
+    <fhirAuth.slf4jVersion>1.7.36</fhirAuth.slf4jVersion>
+    <fhirAuth.httpclientVersion>4.5.14</fhirAuth.httpclientVersion>
+    <fhirAuth.logbackVersion>1.2.11</fhirAuth.logbackVersion>
+    <fhirAuth.mockitoVersion>4.8.1</fhirAuth.mockitoVersion>
+    <fhirAuth.jupiterVersion>5.9.1</fhirAuth.jupiterVersion>
+    <fhirAuth.surefireVersion>3.1.2</fhirAuth.surefireVersion>
+    <version.jakarta.validation-api>3.0.2</version.jakarta.validation-api>
+  </properties>
+
+  <dependencies>
+    <dependency>
+      <groupId>org.projectlombok</groupId>
+      <artifactId>lombok</artifactId>
+      <version>${fhirAuth.lombokVersion}</version>
+      <scope>provided</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.slf4j</groupId>
+      <artifactId>slf4j-api</artifactId>
+      <version>${fhirAuth.slf4jVersion}</version>
+    </dependency>
+    <dependency>
+      <groupId>com.google.code.gson</groupId>
+      <artifactId>gson</artifactId>
+      <version>2.10</version>
+    </dependency>
+    <dependency>
+      <groupId>org.apache.httpcomponents</groupId>
+      <artifactId>httpclient</artifactId>
+      <version>${fhirAuth.httpclientVersion}</version>
+    </dependency>
+    <dependency>
+      <groupId>org.hibernate.validator</groupId>
+      <artifactId>hibernate-validator</artifactId>
+      <version>8.0.1.Final</version>
+    </dependency>
+    <dependency>
+      <groupId>jakarta.validation</groupId>
+      <artifactId>jakarta.validation-api</artifactId>
+      <version>${version.jakarta.validation-api}</version>
+    </dependency>
+    <dependency>
+      <groupId>com.auth0</groupId>
+      <artifactId>java-jwt</artifactId>
+      <version>4.4.0</version>
+    </dependency>
+    <dependency>
+      <groupId>com.nimbusds</groupId>
+      <artifactId>nimbus-jose-jwt</artifactId>
+      <version>10.0.2</version>
+    </dependency>
+    <dependency>
+      <groupId>com.google.code.findbugs</groupId>
+      <artifactId>jsr305</artifactId>
+      <version>3.0.2</version>
+    </dependency>
+
+    <!-- Testing -->
+    <dependency>
+      <groupId>org.junit.jupiter</groupId>
+      <artifactId>junit-jupiter-engine</artifactId>
+      <version>${fhirAuth.jupiterVersion}</version>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.junit.jupiter</groupId>
+      <artifactId>junit-jupiter-api</artifactId>
+      <version>${fhirAuth.jupiterVersion}</version>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.junit.jupiter</groupId>
+      <artifactId>junit-jupiter-params</artifactId>
+      <version>${fhirAuth.jupiterVersion}</version>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.mockito</groupId>
+      <artifactId>mockito-core</artifactId>
+      <version>${fhirAuth.mockitoVersion}</version>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.mockito</groupId>
+      <artifactId>mockito-junit-jupiter</artifactId>
+      <version>${fhirAuth.mockitoVersion}</version>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>com.github.tomakehurst</groupId>
+      <artifactId>wiremock-jre8-standalone</artifactId>
+      <version>2.35.0</version>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>ch.qos.logback</groupId>
+      <artifactId>logback-classic</artifactId>
+      <version>${fhirAuth.logbackVersion}</version>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>commons-io</groupId>
+      <artifactId>commons-io</artifactId>
+      <version>2.13.0</version>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.slf4j</groupId>
+      <artifactId>jcl-over-slf4j</artifactId>
+      <version>${fhirAuth.slf4jVersion}</version>
+      <scope>test</scope>
+    </dependency>
+  </dependencies>
+
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <version>3.11.0</version>
+        <configuration>
+          <source>11</source>
+          <target>11</target>
+          <compilerArgs>
+            <arg>-Xlint:all</arg>
+          </compilerArgs>
+          <annotationProcessorPaths>
+            <path>
+              <groupId>org.projectlombok</groupId>
+              <artifactId>lombok</artifactId>
+              <version>${fhirAuth.lombokVersion}</version>
+            </path>
+          </annotationProcessorPaths>
+        </configuration>
+      </plugin>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-surefire-plugin</artifactId>
+        <version>${fhirAuth.surefireVersion}</version>
+        <configuration>
+          <useSystemClassLoader>true</useSystemClassLoader>
+          <useManifestOnlyJar>false</useManifestOnlyJar>
+          <forkCount>1C</forkCount>
+          <failIfNoTests>false</failIfNoTests>
+        </configuration>
+      </plugin>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-source-plugin</artifactId>
+        <version>3.3.1</version>
+        <executions>
+          <execution>
+            <id>attach-sources</id>
+            <phase>verify</phase>
+            <goals>
+              <goal>jar-no-fork</goal>
+            </goals>
+          </execution>
+        </executions>
+      </plugin>
+    </plugins>
+  </build>
+</project>
