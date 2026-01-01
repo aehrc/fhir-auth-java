@@ -27,7 +27,7 @@
   <artifactId>fhir-auth</artifactId>
   <packaging>jar</packaging>
 
-  <name>FHIR Authentication Library</name>
+  <name>FHIR Auth Client for Java</name>
   <description>Java library for FHIR SMART Backend Services authentication.</description>
   <url>https://github.com/aehrc/fhir-auth-java</url>
 

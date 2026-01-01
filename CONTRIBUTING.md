@@ -1,6 +1,6 @@
-# Contributing to FHIR Authentication Library
+# Contributing to FHIR Auth Client for Java
 
-Thank you for your interest in contributing to FHIR Authentication Library! This
+Thank you for your interest in contributing to FHIR Auth Client for Java! This
 document provides guidelines and instructions for contributing.
 
 ## Code of Conduct
@@ -76,5 +76,5 @@ All new code should include appropriate unit tests.
 
 ## Licence
 
-By contributing to FHIR Authentication Library, you agree that your
+By contributing to FHIR Auth Client for Java, you agree that your
 contributions will be licensed under the Apache License 2.0.

@@ -1,4 +1,4 @@
-# FHIR Authentication Library
+# FHIR Auth Client for Java
 
 A Java library for authenticating requests to FHIR servers using the
 [SMART Backend Services](https://hl7.org/fhir/smart-app-launch/backend-services.html)
@@ -107,7 +107,7 @@ try (SMARTTokenCredentialFactory factory = SMARTTokenCredentialFactory.create(co
 ### Configuration options
 
 | Option                 | Type    | Default | Description                                             |
-|------------------------|---------|---------|---------------------------------------------------------|
+| ---------------------- | ------- | ------- | ------------------------------------------------------- |
 | `enabled`              | boolean | `false` | Enable authentication                                   |
 | `useSMART`             | boolean | `true`  | Discover token endpoint via SMART configuration         |
 | `tokenEndpoint`        | String  | null    | OAuth2 token endpoint (required if `useSMART` is false) |
