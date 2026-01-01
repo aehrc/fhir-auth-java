@@ -150,7 +150,7 @@ public final class ValidationUtils {
      * @return the accumulator.
      */
     public ViolationAccumulator checkThat(
-        boolean assertion, @Nonnull final String message, @Nonnull final String property) {
+        final boolean assertion, @Nonnull final String message, @Nonnull final String property) {
       return checkThat(assertion, message, Optional.of(property));
     }
 
@@ -161,7 +161,7 @@ public final class ValidationUtils {
      * @param message the message to add to the violation.
      * @return the accumulator.
      */
-    public ViolationAccumulator checkThat(boolean assertion, @Nonnull final String message) {
+    public ViolationAccumulator checkThat(final boolean assertion, @Nonnull final String message) {
       return checkThat(assertion, message, Optional.empty());
     }
 

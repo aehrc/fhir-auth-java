@@ -105,10 +105,10 @@ public class AuthTokenProvider {
     final ClientCredentialsResponse response =
         clientCredentialsGrant(authParams, tokenExpiryTolerance);
     final Instant expires = getExpiryTime(response);
-    final AccessContext accessContexts =
+    final AccessContext newAccessContext =
         new AccessContext(Token.of(requireNonNull(response.getAccessToken())), expires);
-    log.debug("New access context created: {}", accessContexts);
-    return accessContexts;
+    log.debug("New access context created: {}", newAccessContext);
+    return newAccessContext;
   }
 
   @Nonnull

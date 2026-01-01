@@ -18,7 +18,6 @@
 package au.csiro.fhir.auth;
 
 import java.util.Optional;
-import javax.annotation.Nonnull;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.http.HttpHeaders;
 import org.apache.http.HttpHost;
@@ -42,11 +41,11 @@ import org.apache.http.protocol.HttpCoreContext;
 @Slf4j
 public class TokenAuthRequestInterceptor implements HttpRequestInterceptor {
 
-  /** Creates a new instance of {@link TokenAuthRequestInterceptor}. */
+  /** Creates a new instance of this interceptor. */
   public TokenAuthRequestInterceptor() {}
 
   @Override
-  public void process(@Nonnull final HttpRequest request, @Nonnull final HttpContext context) {
+  public void process(final HttpRequest request, final HttpContext context) {
     final CredentialsProvider credentialsProvider =
         (CredentialsProvider) context.getAttribute(HttpClientContext.CREDS_PROVIDER);
     final HttpHost targetHost = (HttpHost) context.getAttribute(HttpCoreContext.HTTP_TARGET_HOST);

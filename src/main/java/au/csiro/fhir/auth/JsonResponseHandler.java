@@ -70,7 +70,7 @@ public class JsonResponseHandler<T> implements ResponseHandler<T> {
       return produceResponse(response);
     } else {
       // Log error response before throwing exception.
-      String errorBody =
+      final String errorBody =
           Optional.ofNullable(response.getEntity())
               .flatMap(this::quietBodyAsString)
               .orElse("<no body>");

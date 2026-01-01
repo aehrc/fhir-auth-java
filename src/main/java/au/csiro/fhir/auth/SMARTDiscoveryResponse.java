@@ -37,7 +37,7 @@ import org.apache.http.client.methods.HttpGet;
 public class SMARTDiscoveryResponse {
 
   /** The path to the SMART configuration discovery endpoint. */
-  public static String SMART_WELL_KNOWN_CONFIGURATION_PATH = ".well-known/smart-configuration";
+  public static final String SMART_WELL_KNOWN_CONFIGURATION_PATH = ".well-known/smart-configuration";
 
   @Nonnull String tokenEndpoint;
 

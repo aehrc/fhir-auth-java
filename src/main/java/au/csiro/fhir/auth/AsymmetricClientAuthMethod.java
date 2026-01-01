@@ -64,7 +64,7 @@ public class AsymmetricClientAuthMethod extends ClientAuthMethod {
       "urn:ietf:params:oauth:client-assertion-type:jwt-bearer";
 
   /** The default expiry time for the JWT in seconds. */
-  public static int DEFAULT_JWT_EXPIRY_IN_SECONDS = 60;
+  public static final int DEFAULT_JWT_EXPIRY_IN_SECONDS = 60;
 
   @Nonnull String tokenEndpoint;
 
